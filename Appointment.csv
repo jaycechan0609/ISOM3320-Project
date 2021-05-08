@@ -1,0 +1,7 @@
+Appointment_ID,Customer_Name,Customer_Phone,Customer_Address,Appointment_Date,Appointment_Time,Appointment_Duration,Appointment_Staff,Appointment_Amount
+A1,Allie,23456789,Chai Wan,1/1/2021,11:00,3,C1,200
+A2,Jennie,34567890,Heng Fa Chuen,31/3/2021,15:00,4,C2,300
+A3,Hazel,98765432,Shau Kei Wan,17/5/2021,13:00,3,C3,400
+A4,Jayce,87654321,Sai Wan Ho,23/4/2021,13:00,6,C1,500
+A5,Eric,24689753,Tai Koo,28/5/2021,15:00,2,C2,600
+A6,Ethan,35798642,Quarry Bay,5/5/2021,16:00,3,C3,700

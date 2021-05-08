@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.241" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditAppointmentController">
+   <children>
+      <TextField fx:id="cus_name" layoutX="174.0" layoutY="97.0" />
+      <TextField fx:id="cus_phonenum" layoutX="174.0" layoutY="147.0" />
+      <TextField fx:id="cus_address" layoutX="62.0" layoutY="220.0" prefHeight="62.0" prefWidth="260.0" />
+      <Button fx:id="edit_but" layoutX="432.0" layoutY="333.0" mnemonicParsing="false" onAction="#Edit" text="Edit" />
+      <Button fx:id="back_but" layoutX="505.0" layoutY="333.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+      <Label layoutX="62.0" layoutY="101.0" text="Customer Name" />
+      <Label layoutX="61.0" layoutY="151.0" text="Customer Phone" />
+      <Label layoutX="62.0" layoutY="192.0" text="Customer Address" />
+      <Text fx:id="reminder" layoutX="213.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="174.22900390625" />
+      <Label layoutX="344.0" layoutY="101.0" text="Date" />
+      <Label layoutX="344.0" layoutY="151.0" text="Time" />
+      <Label layoutX="344.0" layoutY="192.0" text="Duration" />
+      <Label layoutX="345.0" layoutY="235.0" text="Cleaner" />
+      <Label layoutX="346.0" layoutY="282.0" text="Amount" />
+      <TextField fx:id="apm_amount" layoutX="409.0" layoutY="278.0" prefHeight="25.0" prefWidth="110.0" />
+      <DatePicker fx:id="date_picker" layoutX="409.0" layoutY="96.0" prefHeight="27.0" prefWidth="110.0" />
+      <MenuButton fx:id="time_hour" layoutX="409.0" layoutY="147.0" mnemonicParsing="false" text="HH">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#apm_00hr" text="00" />
+          <MenuItem mnemonicParsing="false" onAction="#apm_01hr" text="01" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_02hr" text="02" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_03hr" text="03" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_04hr" text="04" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_05hr" text="05" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_06hr" text="06" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_07hr" text="07" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_08hr" text="08" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_09hr" text="09" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_10hr" text="10" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_11hr" text="11" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_12hr" text="12" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_13hr" text="13" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_14hr" text="14" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_15hr" text="15" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_16hr" text="16" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_17hr" text="17" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_18hr" text="18" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_19hr" text="19" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_20hr" text="20" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_21hr" text="21" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_22hr" text="22" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_23hr" text="23" />
+        </items>
+      </MenuButton>
+      <MenuButton fx:id="time_minute" layoutX="478.0" layoutY="146.0" mnemonicParsing="false" text="MM">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#apm_00min" text="00" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_15min" text="15" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_30min" text="30" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_45min" text="45" />
+         </items>
+      </MenuButton>
+      <MenuButton fx:id="duration" layoutX="409.0" layoutY="187.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="110.0">
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#apm_1dur" text="1" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_2dur" text="2" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_3dur" text="3" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_4dur" text="4" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_5dur" text="5" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_6dur" text="6" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_7dur" text="7" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_8dur" text="8" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_9dur" text="9" />
+            <MenuItem mnemonicParsing="false" onAction="#apm_10dur" text="10" />
+         </items>
+      </MenuButton>
+      <TextField fx:id="cleaner_id" layoutX="409.0" layoutY="230.0" prefHeight="27.0" prefWidth="110.0" />
+   </children>
+</AnchorPane>
