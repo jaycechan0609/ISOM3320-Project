@@ -11,12 +11,13 @@ public class Cleaner{
   private String cleanerWorkingHour;
   private String cleanerTotalSalary;
   private String cleanerRank;
-  
+ 
   public Cleaner(){
   }
   
   public Cleaner(String cleanerID, String cleanerName,String cleanerPassword, 
-                 String cleanerTeam, String cleanerPhone, String cleanerEmail, String cleanerSalary){
+                 String cleanerTeam, String cleanerPhone, String cleanerEmail,
+                 String cleanerSalary,String cleanerWorkingHour,String cleanerTotalSalary){
     this.cleanerID = cleanerID;
     this.cleanerName = cleanerName;
     this.cleanerPassword = cleanerPassword;
@@ -24,6 +25,9 @@ public class Cleaner{
     this.cleanerPhone = cleanerPhone;
     this.cleanerEmail = cleanerEmail;
     this.cleanerSalary = cleanerSalary;
+    this.cleanerWorkingHour = cleanerWorkingHour;
+    this.cleanerTotalSalary = cleanerTotalSalary;
+    
   }
   
   public void setCleanerID(String id){
@@ -74,6 +78,17 @@ public class Cleaner{
   }
   public String getCleanerSalary(){
     return this.cleanerSalary;
+  }
+  public void setCleanerWorkingHour(String workingHour){
+    this.cleanerWorkingHour = workingHour;
+  }
+  
+  public void setCleanerTotalSalary(String totalSalary){
+    this.cleanerTotalSalary = totalSalary;
+    this.setCleanerWorkingHour(Float.toString(Float.parseFloat(totalSalary)/Float.parseFloat(this.cleanerSalary)));
+  }
+  public void setCleanerRank(String rank){
+    this.cleanerRank = rank;
   }
   
   

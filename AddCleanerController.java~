@@ -70,9 +70,6 @@ public class AddCleanerController {
         reminder.setFill(Color.FIREBRICK);
     }
     }
-      
-
-    
 
     @FXML
     void Back(ActionEvent event) throws IOException{
@@ -84,9 +81,3 @@ public class AddCleanerController {
        
     }
 }
-
-  
-
-    
-
-  

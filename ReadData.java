@@ -23,6 +23,7 @@ public class ReadData extends Application{
   
   public static void main(String[] args){
     launch(args);
+    
   }
   
   //for reading data
@@ -49,7 +50,7 @@ public class ReadData extends Application{
     line = scanner1.nextLine().split(",");
     while (scanner1.hasNextLine()){
       line = scanner1.nextLine().split(",");
-      Cleaner c = new Cleaner(line[0],line[1],line[2],line[3],line[4],line[5],line[6]);
+      Cleaner c = new Cleaner(line[0],line[1],line[2],line[3],line[4],line[5],line[6],line[7], line[8]);
       cleanerArrayList.add(c);
     }
     scanner1.close();
@@ -88,6 +89,22 @@ public class ReadData extends Application{
     writer.flush(); 
     writer.close(); 
     }
+  }
+  public static String convertComma(String s, int mode) {
+    String f = "";
+    if (mode == 1) {
+      String[] temp = s.split(",");
+      for (String t: temp) {
+        f += t + "&";
+      }
+    }else {
+      String[] temp = s.split("&");
+      for (String t: temp) {
+        f += t + ",";
+      }
+    }
+
+    return f.substring(0, f.length() - 1);
   }
   
   public static void updateAppointmentCSV() throws IOException { 

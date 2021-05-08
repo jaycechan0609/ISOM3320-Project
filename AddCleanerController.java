@@ -52,14 +52,17 @@ public class AddCleanerController {
     @FXML
     void Add(ActionEvent event) throws IOException{
     
+      
       String temp_id = "C"+ String.valueOf(ReadData.cleanerArrayList.size()+1);
       String temp_salary = "50";
-      
+      String temp_Working_Hour = "0";
+      String temp_Total_Salary = "0";
       if(!name.getText().isEmpty() && !password.getText().isEmpty() 
                               && !team.getText().isEmpty() && !phone_no.getText().isEmpty()
            && !email.getText().isEmpty() && !temp_salary.isEmpty()){
       Cleaner c = new Cleaner(temp_id, name.getText(), password.getText(), 
-                              team.getText(), phone_no.getText(), email.getText(), temp_salary);                                                 
+                              team.getText(), phone_no.getText(), email.getText(), 
+                              temp_salary, temp_Working_Hour, temp_Total_Salary);                                                 
       ReadData.cleanerArrayList.add(c);
       ReadData.updateCleanerCSV();     
       ReadData.switchScene("AddCleanerSuccessfully");

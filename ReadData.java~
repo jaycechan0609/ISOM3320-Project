@@ -11,6 +11,7 @@ public class ReadData extends Application{
   public static String userid;
   public static ArrayList<Manager> managerArrayList;
   public static ArrayList<Cleaner> cleanerArrayList;
+  public static ArrayList<Appointment> appointmentArrayList;
   
   @Override
   public void start(Stage stage) throws FileNotFoundException, IOException{
@@ -29,10 +30,13 @@ public class ReadData extends Application{
     String[] line;
     File managerFile = new File("Manager.csv");
     File cleanerFile = new File("Cleaner.csv");
+    File appointmentFile = new File("Appointment.csv");
     managerArrayList = new ArrayList<>();
     cleanerArrayList = new ArrayList<>();
+    appointmentArrayList = new ArrayList<>();
     Scanner scanner0 = new Scanner(managerFile);
     Scanner scanner1 = new Scanner(cleanerFile);
+    Scanner scanner2 = new Scanner(appointmentFile);
     //skip first line
     line = scanner0.nextLine().split(",");
     while (scanner0.hasNextLine()){
@@ -49,6 +53,14 @@ public class ReadData extends Application{
       cleanerArrayList.add(c);
     }
     scanner1.close();
+    
+    line = scanner2.nextLine().split(",");
+    while (scanner2.hasNextLine()){
+      line = scanner2.nextLine().split(",");
+      Appointment a = new Appointment(line[0],line[1],line[2],line[3],line[4],line[5],line[6],line[7],line[8]);
+      appointmentArrayList.add(a);
+    }
+    scanner2.close();
     
   }
   public static void updateCleanerCSV() throws IOException { 
@@ -75,6 +87,36 @@ public class ReadData extends Application{
      
     writer.flush(); 
     writer.close(); 
+    }
+  }
+  
+  public static void updateAppointmentCSV() throws IOException { 
+    // write back appointment data 
+    File file1 = new File("Appointment.csv"); 
+    // creates the file 
+    file1.createNewFile(); 
+    // creates a FileWriter Object 
+    try (FileWriter writer1 = new FileWriter(file1)){ 
+    // Writes the content to the file 
+    String appointmentHeader = "Customer_Name,Customer_Phone,Customer_Address,Appointment_Date,Appointment_Time,Appointment_Duration,Appointment_Staff,Appointment_Amount\n";
+
+    writer1.write(appointmentHeader); 
+    for(Appointment a :appointmentArrayList){ 
+        writer1.write(a.getAppointmentID()+","+ 
+                     a.getCustomerName()+","+ 
+                     a.getCustomerPhone()+","+
+                     a.getCustomerAddress()+","+
+                     a.getAppointmentDate()+","+
+                     a.getAppointmentTime()+","+
+                     a.getAppointmentDuration()+","+
+                     a.getAppointmentStaff()+","+
+                     a.getAppointmentAmount()+
+                     "\n"); 
+ 
+    } 
+     
+    writer1.flush(); 
+    writer1.close(); 
     }
   }
   
